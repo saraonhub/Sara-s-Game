@@ -11,13 +11,14 @@ public class MeleeHit : MonoBehaviour
         if (isHit)
         {
             Vector3 center = transform.position + hitOffset;
-            Collider[] hits = Physics.OverlapBox(center, hitSize / 2, Quaternion.identity, enemyLayer);
+            Collider[] hits = Physics.OverlapBox(center, hitSize / 2, transform.rotation, enemyLayer);
 
             foreach (Collider hit in hits)
             {
                 Destroy(hit.gameObject);
-
             }
         }
     }
+
+
 }

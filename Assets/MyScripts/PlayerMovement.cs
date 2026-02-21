@@ -4,16 +4,17 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb;
+    private Vector3 moveDirection;
     // ground
     public Transform groundCheck;
     public float groundCheckDistance;
     public LayerMask groundLayer;
 
     //speed
-    public float forwardSpeed;
-    public float sidewaysSpeed;
+    public float moveSpeed;
     public float jumpForce;
 
+    private bool jumpRequest;
     //extra jumps
     public int extraJumps;
     private int jumpsLeft;
@@ -25,6 +26,10 @@ public class PlayerMovement : MonoBehaviour
     //jump buffer
     public float jumpBufferTime;
     private float jumpBufferCounter;
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     void Update()
     {
         bool isStraight = Input.GetKey(KeyCode.UpArrow);
@@ -34,26 +39,28 @@ public class PlayerMovement : MonoBehaviour
         bool isJump = Input.GetKeyDown(KeyCode.Space);
         bool isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundCheckDistance, groundLayer);
 
+        float moveX = 0f;
+        float moveZ = 0f;
+
         //MOVEMENT
         if (isStraight)
         {
-            transform.Translate(Vector3.forward * forwardSpeed * Time.deltaTime);
+            moveZ = 1f;
         }
-
-        if (isRight)
-        {
-            transform.Translate(Vector3.right * sidewaysSpeed * Time.deltaTime);
-        }
-
         if (isLeft)
         {
-            transform.Translate(Vector3.left * sidewaysSpeed * Time.deltaTime);
+            moveX = -1f;
         }
-
+        if (isRight)
+        {
+            moveX = 1f;
+        }
         if (isBack)
         {
-            transform.Translate(Vector3.back * forwardSpeed * Time.deltaTime);
+            moveZ = -1f;
         }
+
+        moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
 
 
         //COYOTE TIME
@@ -84,7 +91,7 @@ public class PlayerMovement : MonoBehaviour
 
         if ((coyoteTimeCounter > 0 || jumpsLeft > 0) && jumpBufferCounter > 0)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+            jumpRequest = true;
 
             if (!isGrounded)
             {
@@ -92,5 +99,21 @@ public class PlayerMovement : MonoBehaviour
             }
             jumpBufferCounter = 0;
         }
+    }
+
+    void FixedUpdate()
+    {
+        //MOVEMENT
+        Vector3 movement = moveDirection * moveSpeed;
+        Vector3 newPosition = rb.position + movement * Time.fixedDeltaTime;
+        rb.MovePosition(newPosition);
+
+        //JUMP
+        if (jumpRequest)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+            jumpRequest = false;
+        }
+
     }
 }
