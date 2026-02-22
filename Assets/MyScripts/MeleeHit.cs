@@ -10,15 +10,18 @@ public class MeleeHit : MonoBehaviour
         bool isHit = Input.GetKeyDown(KeyCode.X);
         if (isHit)
         {
-            Vector3 center = transform.position + hitOffset;
-            Collider[] hits = Physics.OverlapBox(center, hitSize / 2, transform.rotation, enemyLayer);
-
-            foreach (Collider hit in hits)
-            {
-                Destroy(hit.gameObject);
-            }
+            Attack();
         }
     }
 
+    void Attack()
+    {
+        Vector3 center = transform.TransformPoint(hitOffset);
+        Collider[] hits = Physics.OverlapBox(center, hitSize / 2, transform.rotation, enemyLayer);
 
+        foreach (Collider hit in hits)
+        {
+            Destroy(hit.gameObject);
+        }
+    }
 }
