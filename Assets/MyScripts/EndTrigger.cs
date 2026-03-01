@@ -1,14 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EndTrigger : MonoBehaviour
+namespace MyGame
 {
-    void OnTriggerEnter(Collider other)
+
+
+    public class EndTrigger : MonoBehaviour
     {
+        void OnTriggerEnter(Collider other)
+        {
 
-        Debug.Log("Level Finished!");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            Debug.Log("Level Finished!");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
+
+
 }
-
-

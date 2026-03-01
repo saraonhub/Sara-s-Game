@@ -1,27 +1,32 @@
 using UnityEngine;
 
-public class MeleeHit : MonoBehaviour
+namespace MyGame
 {
-    public Vector3 hitOffset = new Vector3(0, 0, 1f);
-    public Vector3 hitSize = new Vector3(0.5f, 0.5f, 0.5f);
-    public LayerMask enemyLayer;
-    void Update()
+
+
+    public class MeleeHit : MonoBehaviour
     {
-        bool isHit = Input.GetKeyDown(KeyCode.X);
-        if (isHit)
+        public Vector3 hitOffset = new Vector3(0, 0, 1f);
+        public Vector3 hitSize = new Vector3(0.5f, 0.5f, 0.5f);
+        public LayerMask enemyLayer;
+        void Update()
         {
-            Attack();
+            bool isHit = Input.GetKeyDown(KeyCode.X);
+            if (isHit)
+            {
+                Attack();
+            }
         }
-    }
 
-    void Attack()
-    {
-        Vector3 center = transform.TransformPoint(hitOffset);
-        Collider[] hits = Physics.OverlapBox(center, hitSize / 2, transform.rotation, enemyLayer);
-
-        foreach (Collider hit in hits)
+        void Attack()
         {
-            Destroy(hit.gameObject);
+            Vector3 center = transform.TransformPoint(hitOffset);
+            Collider[] hits = Physics.OverlapBox(center, hitSize / 2, transform.rotation, enemyLayer);
+
+            foreach (Collider hit in hits)
+            {
+                Destroy(hit.gameObject);
+            }
         }
     }
 }

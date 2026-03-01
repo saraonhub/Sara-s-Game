@@ -1,13 +1,22 @@
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+namespace MyGame
 {
-    public Transform player;
-    public Vector3 offset;
 
-    void Update()
+
+    public class CameraFollow : MonoBehaviour
     {
-        transform.position = player.TransformPoint(offset);
-        transform.LookAt(player.position);
+        public Transform player;
+        public Vector3 offset;
+
+        void Update()
+        {
+            if (player != null)
+            {
+                transform.position = player.position + offset;
+                transform.LookAt(player.position + Vector3.up * 1.5f);
+            }
+        }
+
     }
 }

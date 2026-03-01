@@ -1,119 +1,139 @@
+using System;
 using NUnit.Framework;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+namespace MyGame
 {
-    public Rigidbody rb;
-    private Vector3 moveDirection;
-    // ground
-    public Transform groundCheck;
-    public float groundCheckDistance;
-    public LayerMask groundLayer;
-
-    //speed
-    public float moveSpeed;
-    public float jumpForce;
-
-    private bool jumpRequest;
-    //extra jumps
-    public int extraJumps;
-    private int jumpsLeft;
-
-    //coyote time
-    public float coyoteTime;
-    private float coyoteTimeCounter;
-
-    //jump buffer
-    public float jumpBufferTime;
-    private float jumpBufferCounter;
-    void Start()
+    public class PlayerMovement : MonoBehaviour
     {
-        rb = GetComponent<Rigidbody>();
-    }
-    void Update()
-    {
-        bool isStraight = Input.GetKey(KeyCode.UpArrow);
-        bool isRight = Input.GetKey(KeyCode.RightArrow);
-        bool isLeft = Input.GetKey(KeyCode.LeftArrow);
-        bool isBack = Input.GetKey(KeyCode.DownArrow);
-        bool isJump = Input.GetKeyDown(KeyCode.Space);
-        bool isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundCheckDistance, groundLayer);
+        public Rigidbody rb;
+        private Vector3 moveDirection;
+        // ground
+        public Transform groundCheck;
+        public float groundCheckDistance;
+        public LayerMask groundLayer;
 
-        float moveX = 0f;
-        float moveZ = 0f;
+        //speed
+        public float moveSpeed;
+        public float jumpForce;
 
-        //MOVEMENT
-        if (isStraight)
-        {
-            moveZ = 1f;
-        }
-        if (isLeft)
-        {
-            moveX = -1f;
-        }
-        if (isRight)
-        {
-            moveX = 1f;
-        }
-        if (isBack)
-        {
-            moveZ = -1f;
-        }
+        private bool jumpRequest;
+        //extra jumps
+        public int extraJumps;
+        private int jumpsLeft;
 
-        moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
+        //coyote time
+        public float coyoteTime;
+        private float coyoteTimeCounter;
 
+        //jump buffer
+        public float jumpBufferTime;
+        private float jumpBufferCounter;
 
-        //COYOTE TIME
-        if (!isGrounded)
+        //smooth turning
+        public float turnSmoothTime = 0.1f;
+        void Start()
         {
-            coyoteTimeCounter -= Time.deltaTime;
+            rb = GetComponent<Rigidbody>();
         }
-        else
+        void Update()
         {
-            coyoteTimeCounter = coyoteTime;
-        }
+            bool isStraight = Input.GetKey(KeyCode.UpArrow);
+            bool isRight = Input.GetKey(KeyCode.RightArrow);
+            bool isLeft = Input.GetKey(KeyCode.LeftArrow);
+            bool isBack = Input.GetKey(KeyCode.DownArrow);
+            bool isJump = Input.GetKeyDown(KeyCode.Space);
+            bool isGrounded = Physics.Raycast(groundCheck.position, Vector3.down, groundCheckDistance, groundLayer);
 
-        //BUFFER TIME
-        if (!isJump)
-        {
-            jumpBufferCounter -= Time.deltaTime;
-        }
-        else
-        {
-            jumpBufferCounter = jumpBufferTime;
-        }
+            float moveX = 0f;
+            float moveZ = 0f;
 
-        //JUMP
-        if (isGrounded)
-        {
-            jumpsLeft = extraJumps;
-        }
+            //MOVEMENT
+            if (isStraight)
+            {
+                moveZ = 1f;
+            }
+            if (isLeft)
+            {
+                moveX = -1f;
+            }
+            if (isRight)
+            {
+                moveX = 1f;
+            }
+            if (isBack)
+            {
+                moveZ = -1f;
+            }
 
-        if ((coyoteTimeCounter > 0 || jumpsLeft > 0) && jumpBufferCounter > 0)
-        {
-            jumpRequest = true;
+            moveDirection = new Vector3(moveX, 0f, moveZ).normalized;
 
+            //ROTATION
+            if (moveDirection != Vector3.zero)
+            {
+                Quaternion targetRot = Quaternion.LookRotation(moveDirection);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, 720 * Time.deltaTime);
+            }
+
+            //COYOTE TIME
             if (!isGrounded)
             {
-                jumpsLeft--;
+                coyoteTimeCounter -= Time.deltaTime;
             }
-            jumpBufferCounter = 0;
+            else
+            {
+                coyoteTimeCounter = coyoteTime;
+            }
+
+            //BUFFER TIME
+            if (!isJump)
+            {
+                jumpBufferCounter -= Time.deltaTime;
+            }
+            else
+            {
+                jumpBufferCounter = jumpBufferTime;
+            }
+
+            //JUMP
+            if (isGrounded)
+            {
+                jumpsLeft = extraJumps;
+            }
+
+            if ((coyoteTimeCounter > 0 || jumpsLeft > 0) && jumpBufferCounter > 0)
+            {
+                jumpRequest = true;
+
+                if (!isGrounded)
+                {
+                    jumpsLeft--;
+                }
+                jumpBufferCounter = 0;
+            }
         }
-    }
 
-    void FixedUpdate()
-    {
-        //MOVEMENT
-        Vector3 movement = moveDirection * moveSpeed;
-        Vector3 newPosition = rb.position + movement * Time.fixedDeltaTime;
-        rb.MovePosition(newPosition);
-
-        //JUMP
-        if (jumpRequest)
+        void FixedUpdate()
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
-            jumpRequest = false;
-        }
+            //MOVEMENT
+            Vector3 horizontalVelocity = moveDirection * moveSpeed;
 
+            rb.linearVelocity = new Vector3(
+            horizontalVelocity.x,
+            rb.linearVelocity.y,
+            horizontalVelocity.z
+        );
+
+
+            //JUMP
+            if (jumpRequest)
+            {
+                rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpForce, rb.linearVelocity.z);
+                jumpRequest = false;
+            }
+
+        }
     }
+
 }
