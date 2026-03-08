@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Collectible
   - Jewel
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Finish
   - Collectible
   - Hazard
-  - 
+  - Chest
   - 
   - 
   - 

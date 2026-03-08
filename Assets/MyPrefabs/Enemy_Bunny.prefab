@@ -359,7 +359,7 @@ MonoBehaviour:
   player: {fileID: 0}
   radius: 10
   detectRange: 7
-  pauseTime: 2
+  pauseTime: 1
 --- !u!195 &3301829355517357854
 NavMeshAgent:
   m_ObjectHideFlags: 0

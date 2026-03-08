@@ -3,7 +3,6 @@ using UnityEngine;
 namespace MyGame
 {
 
-
     public class MeleeHit : MonoBehaviour
     {
         public Vector3 hitOffset = new Vector3(0, 0, 1f);
