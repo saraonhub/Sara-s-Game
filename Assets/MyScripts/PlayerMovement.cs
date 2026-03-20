@@ -33,6 +33,9 @@ namespace MyGame
 
         //smooth turning
         public float turnSmoothTime = 0.1f;
+
+        //bark
+        public AudioSource doubleBark;
         void Start()
         {
             rb = GetComponent<Rigidbody>();
@@ -106,9 +109,11 @@ namespace MyGame
             {
                 jumpRequest = true;
 
-                if (!isGrounded)
+
+                if (!isGrounded && jumpsLeft > 0)
                 {
                     jumpsLeft--;
+                    doubleBark.Play();
                 }
                 jumpBufferCounter = 0;
             }
@@ -125,7 +130,6 @@ namespace MyGame
             horizontalVelocity.z
         );
 
-
             //JUMP
             if (jumpRequest)
             {
@@ -133,7 +137,15 @@ namespace MyGame
                 jumpRequest = false;
             }
 
+            if (rb.linearVelocity.y < 0)
+            {
+                rb.linearVelocity += Vector3.up * Physics.gravity.y * (1.5f - 1) * Time.fixedDeltaTime;
+            }
         }
+
+
     }
+
+
 
 }

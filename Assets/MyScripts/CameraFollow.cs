@@ -9,7 +9,7 @@ namespace MyGame
         public Transform player;
         public Vector3 offset;
 
-        void Update()
+        void LateUpdate()
         {
             if (player != null)
             {

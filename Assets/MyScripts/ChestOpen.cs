@@ -10,6 +10,7 @@ namespace MyGame
         private bool isOpen = false;
         public Animator animator;
         public GameObject chestIcon;
+        public AudioSource collectSound;
 
         void Start()
         {
@@ -35,10 +36,16 @@ namespace MyGame
                     animator.SetBool("isOpening", true);
                     isOpen = true;
 
-                    chestIcon.SetActive(true);
+                    Invoke("ShowUI", 2);
+                    collectSound.PlayDelayed(2);
                 }
             }
 
+        }
+
+        void ShowUI()
+        {
+            chestIcon.SetActive(true);
         }
     }
 

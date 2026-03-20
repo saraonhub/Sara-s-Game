@@ -11,6 +11,7 @@ namespace MyGame
         public Vector3 collectOffset = new Vector3(0, 0, 1f);
         public Vector3 collectSize = new Vector3(2, 2, 2);
         public PlusFiveEffect popup;
+        public AudioSource starCollect;
 
         public void Update()
         {
@@ -31,9 +32,11 @@ namespace MyGame
                 {
                     score++;
                 }
-
+                starCollect.Play();
                 Destroy(c.gameObject);
                 scoreText.text = $"{score}";
+
+
             }
         }
 

@@ -48,7 +48,7 @@ namespace MyGame
             }
 
             //if player stops pressing space
-            if (!isJump && isJumping)
+            if (isJumping)
             {
                 animator.SetBool("isJumping", false);
             }
@@ -76,8 +76,6 @@ namespace MyGame
             {
                 animator.SetBool("isPunch", false);
             }
-
-
 
         }
     }
