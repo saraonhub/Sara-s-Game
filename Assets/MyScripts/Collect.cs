@@ -6,12 +6,14 @@ namespace MyGame
     public class Collect : MonoBehaviour
     {
         private int score = 0;
+        public int StarScore { get { return score; } }
         public TextMeshProUGUI scoreText;
         public LayerMask collectibleLayer;
         public Vector3 collectOffset = new Vector3(0, 0, 1f);
         public Vector3 collectSize = new Vector3(2, 2, 2);
         public PlusFiveEffect popup;
         public AudioSource starCollect;
+        public GameManager gm;
 
         public void Update()
         {
@@ -35,7 +37,7 @@ namespace MyGame
                 starCollect.Play();
                 Destroy(c.gameObject);
                 scoreText.text = $"{score}";
-
+                gm.starsCollectedInLevel = score;
 
             }
         }
