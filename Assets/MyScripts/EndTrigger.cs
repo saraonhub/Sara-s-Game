@@ -6,17 +6,16 @@ namespace MyGame
 {
     public class EndTrigger : MonoBehaviour
     {
-        public GameManager gm;
 
         void OnTriggerEnter(Collider other)
         {
-            if (gm.enoughStarsCollected)
+            if (GameManager.Instance.enoughStarsCollected)
             {
-                gm.LevelFinished();
+                GameManager.Instance.LevelFinished();
             }
             else
             {
-                gm.GameOver("Stars are there for a reason! Stabilize the portal!");
+                GameManager.Instance.GameOver("Stars are there for a reason! Stabilize the portal!");
             }
         }
 

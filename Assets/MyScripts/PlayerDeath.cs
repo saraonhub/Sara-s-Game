@@ -6,7 +6,6 @@ namespace MyGame
 
     public class PlayerDeath : MonoBehaviour
     {
-        public GameManager gm;
         public LayerMask deathLayer;
         public Vector3 deathBoxSize = new Vector3(0.6f, 1f, 0.6f);
         public Vector3 deathOffset = new Vector3(0, 0.3f, 0);
@@ -47,7 +46,7 @@ namespace MyGame
         void Die(string message)
         {
             gameObject.SetActive(false);
-            gm.GameOver(message);
+            GameManager.Instance.GameOver(message);
         }
     }
 }

@@ -9,6 +9,8 @@ namespace MyGame
 
     public class GameManager : MonoBehaviour
     {
+
+        public static GameManager Instance;
         float timer = 0;
         bool isTimerRunning = false;
         public int starsToPass = 5;
@@ -21,6 +23,18 @@ namespace MyGame
         public GameObject levelCompleted;
         public TextMeshProUGUI failReason;
 
+        private void Awake()
+        {
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
         void Start()
         {
             isTimerRunning = true;

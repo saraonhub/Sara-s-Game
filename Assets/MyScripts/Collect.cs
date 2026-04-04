@@ -13,7 +13,7 @@ namespace MyGame
         public Vector3 collectSize = new Vector3(2, 2, 2);
         public PlusFiveEffect popup;
         public AudioSource starCollect;
-        public GameManager gm;
+
 
         public void Update()
         {
@@ -28,16 +28,18 @@ namespace MyGame
                 {
                     score += 5;
                     popup.ShowPopup("+5");
+                    Inventory.Instance.TotalJewelsCollected();
 
                 }
                 else
                 {
                     score++;
+                    Inventory.Instance.TotalStarsCollected();
                 }
                 starCollect.Play();
                 Destroy(c.gameObject);
                 scoreText.text = $"{score}";
-                gm.starsCollectedInLevel = score;
+                GameManager.Instance.starsCollectedInLevel = score;
 
             }
         }

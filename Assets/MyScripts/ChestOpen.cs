@@ -36,8 +36,11 @@ namespace MyGame
                     animator.SetBool("isOpening", true);
                     isOpen = true;
 
+                    Inventory.Instance.TotalChestsCollected();
+
                     Invoke("ShowUI", 2);
                     collectSound.PlayDelayed(2);
+
                 }
             }
 

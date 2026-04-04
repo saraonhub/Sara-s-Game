@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &8230814588429707849
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.266993
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.074000835
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 21.082474
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      propertyPath: m_Name
+      value: palm-straight
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8002855072225128229}
+  m_SourcePrefab: {fileID: 100100000, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+--- !u!1 &9149295273723926296 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}
+  m_PrefabInstance: {fileID: 8230814588429707849}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &8002855072225128229
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9149295273723926296}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6537770310687888731, guid: cfdcaa97d2c0d4b6b8264de4b8cef496, type: 3}

@@ -15,10 +15,12 @@ namespace MyGame
         private Vector3 spawnPosition;
         private float waitTimer = 0f;
         public float pauseTime = 2f;
+        Animator animator;
 
 
         void Start()
         {
+            animator = GetComponent<Animator>();
             spawnPosition = transform.position;
         }
 
@@ -29,6 +31,7 @@ namespace MyGame
             if (distanceToPlayer <= detectRange)
             {
                 agent.SetDestination(player.position);
+                animator.SetBool("isIdle", false);
             }
             else if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
@@ -55,12 +58,15 @@ namespace MyGame
         {
             if (!agent.pathPending && agent.remainingDistance <= agent.stoppingDistance)
             {
+                animator.SetBool("isIdle", true);
                 waitTimer += Time.deltaTime;
                 if (waitTimer > pauseTime)
                 {
                     agent.SetDestination(GetRandomPosition());
                     waitTimer = 0f;
+                    animator.SetBool("isIdle", false);
                 }
+
             }
         }
     }
