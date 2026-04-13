@@ -37,14 +37,16 @@ public class Inventory : MonoBehaviour
     {
         if (Instance != null)
         {
-            Destroy(gameObject); // Kill this duplicate
+            Destroy(gameObject);
             return;
         }
+        else
+        {
+            Instance = this;
+        }
 
-        Instance = this;
-        DontDestroyOnLoad(gameObject);
 
-        Debug.Log("Inventory created. totalStars: " + totalStars);
+
     }
     private void Update()
     {
@@ -93,7 +95,6 @@ public class Inventory : MonoBehaviour
     {
         totalStars++;
         starCounter.text = totalStars.ToString();
-        Debug.Log(totalStars);
     }
 
     public void TotalJewelsCollected()

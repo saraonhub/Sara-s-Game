@@ -28,7 +28,7 @@ namespace MyGame
             if (Instance == null)
             {
                 Instance = this;
-                DontDestroyOnLoad(gameObject);
+
             }
             else
             {
@@ -62,6 +62,7 @@ namespace MyGame
 
 
         }
+
 
         void HideSign()
         {

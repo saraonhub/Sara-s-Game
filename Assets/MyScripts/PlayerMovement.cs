@@ -13,7 +13,7 @@ namespace MyGame
         public float groundCheckDistance;
         public LayerMask groundLayer;
         //speed
-        public float moveSpeed;
+        float moveSpeed = 9;
         public float jumpForce;
         private bool jumpRequest;
         //extra jumps
