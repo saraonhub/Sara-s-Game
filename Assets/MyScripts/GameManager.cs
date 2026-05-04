@@ -2,6 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace MyGame
 {
@@ -93,6 +94,7 @@ namespace MyGame
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
+
 
 
     }

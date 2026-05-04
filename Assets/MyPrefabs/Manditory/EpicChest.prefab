@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2820450775632493398}
   m_Layer: 0
   m_Name: EpicChest
-  m_TagString: Untagged
+  m_TagString: EpicChest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -118,6 +118,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: EpicChest_PF_URP
       objectReference: {fileID: 0}
+    - target: {fileID: 2123551918613886121, guid: 9ab336a49e99f674b900bcdf76eb623c, type: 3}
+      propertyPath: m_TagString
+      value: EpicChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 4990191255902697149, guid: 9ab336a49e99f674b900bcdf76eb623c, type: 3}
+      propertyPath: m_TagString
+      value: EpicChest
+      objectReference: {fileID: 0}
     - target: {fileID: 5623703108827180039, guid: 9ab336a49e99f674b900bcdf76eb623c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -197,3 +205,4 @@ MonoBehaviour:
   detectionRadius: 1
   animator: {fileID: 3637777830389501886}
   chestIcon: {fileID: 0}
+  collectSound: {fileID: 0}

@@ -9,14 +9,17 @@ public class Inventory : MonoBehaviour
     // TOTALS
     public static int totalStars = 0;
     public static int totalJewles = 0;
-    public static int totalChests = 0;
+    public static int totalCrownedChests = 0;
+    public static int totalEpicChests = 0;
     public static int totalTreats = 0;
 
     //UI
     public GameObject inventoryUI;
     public TextMeshProUGUI starCounter;
     public TextMeshProUGUI jewelCounter;
-    public TextMeshProUGUI chestCounter;
+    public TextMeshProUGUI crownedChestCounter;
+    public TextMeshProUGUI epicChestCounter;
+    public TextMeshProUGUI treatCounter;
 
     public GameObject pauseSprite;
     public GameObject resumeSprite;
@@ -63,7 +66,9 @@ public class Inventory : MonoBehaviour
         {
             starCounter.text = totalStars.ToString();
             jewelCounter.text = totalJewles.ToString();
-            chestCounter.text = totalChests.ToString();
+            crownedChestCounter.text = totalCrownedChests.ToString();
+            epicChestCounter.text = totalEpicChests.ToString();
+
 
             PauseGame();
         }
@@ -102,14 +107,22 @@ public class Inventory : MonoBehaviour
         totalJewles++;
         jewelCounter.text = totalJewles.ToString();
     }
-    public void TotalChestsCollected()
+    public void TotalCrownedChestsCollected()
     {
-        totalChests++;
-        chestCounter.text = totalChests.ToString();
+        totalCrownedChests++;
+        crownedChestCounter.text = totalCrownedChests.ToString();
+    }
+
+    public void TotalEpicChestsCollected()
+    {
+        totalEpicChests++;
+        epicChestCounter.text = totalEpicChests.ToString();
     }
     public void TotalTreatsCollected()
     {
         totalTreats++;
+        treatCounter.text = totalTreats.ToString();
+
     }
 
 

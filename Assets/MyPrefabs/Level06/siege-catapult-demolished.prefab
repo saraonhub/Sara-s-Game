@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4798617785011422634
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -7.4276543
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -6.750001
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 90.3619
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8723294
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.4889186
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 58.539
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      propertyPath: m_Name
+      value: siege-catapult-demolished
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4069903394911436029}
+  m_SourcePrefab: {fileID: 100100000, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+--- !u!1 &5645671848838920443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}
+  m_PrefabInstance: {fileID: 4798617785011422634}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &4069903394911436029
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5645671848838920443}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -8527967888543993123, guid: 7384948dffb6f4b288c99cbb867e41b4, type: 3}

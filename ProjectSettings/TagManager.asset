@@ -8,6 +8,8 @@ TagManager:
   - Jewel
   - Chest
   - SlipperyGround
+  - Treat
+  - EpicChest
   layers:
   - Default
   - TransparentFX

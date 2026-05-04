@@ -4848,7 +4848,7 @@ GameObject:
   - component: {fileID: 234529153954658451}
   m_Layer: 0
   m_Name: CrownedChest
-  m_TagString: Untagged
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9946,6 +9946,7 @@ MonoBehaviour:
   detectionRadius: 1
   animator: {fileID: 1708084357114434537}
   chestIcon: {fileID: 0}
+  collectSound: {fileID: 0}
 --- !u!4 &7302747379936331723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4684009943279343459, guid: 53016ba91f6e8ea41baa051b9d96e608, type: 3}

@@ -35,8 +35,15 @@ namespace MyGame
                 {
                     animator.SetBool("isOpening", true);
                     isOpen = true;
+                    if (this.CompareTag("EpicChest"))
+                    {
+                        Inventory.Instance.TotalEpicChestsCollected();
+                    }
+                    else
+                    {
+                        Inventory.Instance.TotalCrownedChestsCollected();
+                    }
 
-                    Inventory.Instance.TotalChestsCollected();
 
                     Invoke("ShowUI", 2);
                     collectSound.PlayDelayed(2);

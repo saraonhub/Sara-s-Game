@@ -31,6 +31,10 @@ namespace MyGame
                     Inventory.Instance.TotalJewelsCollected();
 
                 }
+                else if (c.CompareTag("Treat"))
+                {
+                    Inventory.Instance.TotalTreatsCollected();
+                }
                 else
                 {
                     score++;
