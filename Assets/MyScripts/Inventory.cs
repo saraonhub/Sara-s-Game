@@ -68,8 +68,7 @@ public class Inventory : MonoBehaviour
             jewelCounter.text = totalJewles.ToString();
             crownedChestCounter.text = totalCrownedChests.ToString();
             epicChestCounter.text = totalEpicChests.ToString();
-
-
+            treatCounter.text = totalTreats.ToString();
             PauseGame();
         }
         else

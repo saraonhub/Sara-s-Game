@@ -43,7 +43,7 @@ public class Cutscene : MonoBehaviour
         if (currentIndex == scenes.Length)
         {
             finished = true;
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             return;
         }
         scenes[currentIndex].SetActive(true);
