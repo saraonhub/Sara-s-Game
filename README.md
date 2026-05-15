@@ -50,7 +50,3 @@ Watch the core mechanics and level design in action:
 ## 👥 Credits
 * **Developer & Designer:** Sara Popović
 * **Mentor:** Dharini Thirupathi (Ubisoft DAU Program)
-
----
-
-**Note:** To play the game on Windows, download the build folder and run the `.exe` file. For Mac users, use the `.app` file provided in the releases/builds folder.
