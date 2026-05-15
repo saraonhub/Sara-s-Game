@@ -1,18 +1,56 @@
-**A 3D PLATFORMER FOR UBISOFT MENTORSHIP BY SARA POPOVIC**
-##👾About the game
-*A 3D platformer where players explore wildly different worlds, from forests to sci-fi landscapes, collecting jewels and mastering platforming challenges.
-##🎮 Controls
-*Arrow keys - move
-*Space - jump
-*X - melee and interacting with chest
+# 🐾 Badi's Adventure
 
-##🚀How to play?
-*Clone the repository
-*Open in Unity 6
-*Make sure scenes have correct indexes (MainMenu - 0, Level1 - 1, Level2 - 2)
-*Press play at the top of Unity Editor and have fun 😄
+**Badi's Adventure** is a 3D platformer developed as the final project for the **Ubisoft DAU Mentorship Program**. The game follows Badi, a brave Yorkshire Terrier, who must navigate through various dream worlds to find portal pieces and return to his owner, Sara.
 
-##Credits
-*Developer and designer: Sara Popovic
+![Unity](https://img.shields.io/badge/Unity-6000.3.6f1-black?logo=unity&logoColor=white)
+![C#](https://img.shields.io/badge/C%23-%23178600.svg?logo=c-sharp&logoColor=white)
+![Platform](https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-blue)
 
+---
 
+## 🎥 Gameplay Showcase
+Watch the core mechanics and level design in action:
+[![Buddy's Adventure Gameplay](https://img.shields.io/badge/YouTube-Watch%20Video-red?logo=youtube)](https://www.youtube.com/watch?v=cOxrVaHGuow)
+
+---
+
+## ✨ Technical Features
+
+* **Custom Character Controller:** Physics-based movement including smooth rotations, jumping, and double-jump mechanics.
+* **Combat System:** Implementation of melee attacks to interact with and defeat various enemies.
+* **Inventory & Collection System:** A fully functional UI-driven system that tracks collected Stars (Data Fragments), Steaks, and Portal Parts.
+* **Game Management:** Robust logic for Health/Death states, checkpoint respawning, and scene transitions (Main Menu to Credits).
+* **Level Design:** 6 unique thematic environments (Forest, Snow, Egypt, Pirate Ship, etc.) with increasing difficulty.
+
+---
+
+## 💻 Tech Stack
+* **Engine:** Unity 6 (6000.3.6f1 LTS)
+* **Language:** C#
+* **UI Design:** Canva (for narrative cutscenes and UI elements)
+* **Version Control:** Git
+
+---
+
+## 🎮 Controls
+* **Arrow keys** - Move
+* **Space** - Jump / Double Jump
+* **X** - Attack
+* **I** - Toggle Inventory
+* **X** - Interaction (Open Chests)
+
+---
+
+## 📂 Project Structure
+* `/Assets/Scripts` - All C# logic (Player, Enemy AI, Managers).
+* `/Assets/Prefabs` - Reusable game objects and environmental assets.
+* `/Assets/Scenes` - Level layouts and narrative sequences.
+---
+
+## 👥 Credits
+* **Developer & Designer:** Sara Popović
+* **Mentor:** Dharini Thirupathi (Ubisoft DAU Program)
+
+---
+
+**Note:** To play the game on Windows, download the build folder and run the `.exe` file. For Mac users, use the `.app` file provided in the releases/builds folder.
