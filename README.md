@@ -13,7 +13,7 @@ Watch the core mechanics and level design in action:
 [![Buddy's Adventure Gameplay](https://img.shields.io/badge/YouTube-Watch%20Video-red?logo=youtube)](https://www.youtube.com/watch?v=cOxrVaHGuow)
 
 <img width="1470" height="956" alt="MainMenu" src="https://github.com/user-attachments/assets/38a14724-c56a-4de7-a8c0-0299fafd80cc" />
-<img width="441" height="275" alt="GameplayImg" src="https://github.com/user-attachments/assets/a1f0ca49-e64d-42c2-9985-c684483f91a3" />
+<img width="441" height="275" alt="GameplayImg" src="https://github.com/user-attachments/assets/a1f0ca49-e64d-42c2-9985-c684483f91a3" /><img width="445" height="274" alt="Invenotry" src="https://github.com/user-attachments/assets/a7f3445b-d56b-495e-b275-23a0b07cf3f5" />
 
 ---
 
